@@ -7,17 +7,17 @@ spec:
  replicas: 1
  selector:
    matchLabels:
-	 app: flask-app
+     app: flask-app
  template:
    metadata:
-	 labels:
-	   app: flask-app
+     labels:
+       app: flask-app
    spec:
-	 containers:
-	 - name: flask-app
-	   image: $1/$2:$3
-	   ports:
-	   - containerPort: 5000
+     containers:
+     - name: flask-app
+       image: $1/$2:$3
+       ports:
+       - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
@@ -29,7 +29,7 @@ spec:
    app: flask-app
  ports:
    - port: 80
-	 targetPort: 8001
+     targetPort: 8001
 EOF
 )
 
