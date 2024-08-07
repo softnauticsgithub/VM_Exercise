@@ -23,13 +23,15 @@ apiVersion: v1
 kind: Service
 metadata:
  name: flask-app-service
+ namespace: metallb-system
 spec:
  type: LoadBalancer
  selector:
    app: flask-app
  ports:
-   - port: 80
-     targetPort: 8001
+   - protocol: TCP
+     port: 80
+     targetPort: 5000
 EOF
 )
 
