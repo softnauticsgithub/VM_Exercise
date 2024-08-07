@@ -15,7 +15,7 @@ spec:
    spec:
      containers:
      - name: flask-app
-       image: deep1301/$2:$3
+       image: $1/$2:$3
        ports:
        - containerPort: 5000
 ---
